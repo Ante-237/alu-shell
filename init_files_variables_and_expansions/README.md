@@ -4,3 +4,5 @@
 3 - number of directoriesin $Path variable
 4 - show env variables
 5 - list local variables 
+6 - create local variable
+7 - create global variable
