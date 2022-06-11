@@ -7,3 +7,4 @@
 6 - create local variable
 7 - create global variable
 8 - adding with env variable
+9 - dividing with env varaibles
