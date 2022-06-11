@@ -11,3 +11,4 @@
 11 - converting binary to decimal
 12 - making patterns and excluding one pattern
 13 - printing floating point value with 2 decimalplaces
+14 - converting decimal to hexadecimal 
