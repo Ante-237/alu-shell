@@ -3,3 +3,4 @@
 2 - adding path name env
 3 - number of directoriesin $Path variable
 4 - show env variables
+5 - list local variables 
