@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#loop that prints the hour of the day in details i believe
+HOUR=1
+MIN=59
+COUNT=2
+while((COUNT>0));do
+	echo "Hour: 0"
+	while((HOUR<=MIN));do
+		echo "$HOUR"
+		((HOUR++))
+	done;
+MIN=9
+HOUR=1
+((COUNT--))
+done;
