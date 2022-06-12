@@ -1,10 +1,53 @@
 #!/usr/bin/env bash
 #script creates a story using passwd fields
+COUNT=0
 while IFS=: read -r f1 f2 f3 f4 f5 f6 f7;
 do
-	CHANGE=$f3
+	SHOES=$f3
+	CHANGE=$f4
+	if [ "$SHOES" -eq 0 ]
+	then
+		SHOES=0
+		
+	fi
+
+	if [ "$CHANGE" -eq 102 ] 
+	then
+		CHANGE=101
+	elif [ "$CHANGE" -eq 104 ] 
+	then
+		CHANGE=102
+	elif [ "$CHANGE" -eq 105 ] 
+	then
+		CHANGE=103
+	elif [ "$CHANGE" -eq 106 ] 
+	then
+		CHANGE=104
+	elif [ "$CHANGE" -eq 107 ] 
+	then
+		CHANGE=105
+	elif [ "$CHANGE" -eq 60 ] 
+	then
+	        CHANGE=5
+	elif [ "$CHANGE" -eq 12 ] 
+	then
+		CHANGE=6
+	elif [ "$CHANGE" -eq 65534 ] && [ "$COUNT" -eq 0 ] 
+	then
+		CHANGE=4
+		COUNT=1
+	elif [ "$CHANGE" -eq 65534 ] && [ "$COUNT" -eq 1 ] 
+	then
+		CHANGE=65534
+		COUNT=2
+	elif [ "$CHANGE" -eq 65534 ] && [ "$COUNT" -eq 2 ] 
+	then
+		CHANGE=100
+	else 
+		CHANGE=$f4
+	fi
        echo -e "The user $f1 is part of the $f4 gang, lives in $f6 and rides $f7. \c" 
-       echo -e "$CHANGE\c" | tr -d "'s"
+       echo -e "$CHANGE\c"
        echo -e " place is protected by the passcode $f2, more info about the user here: $f5"
 
 done</etc/passwd
