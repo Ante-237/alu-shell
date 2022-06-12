@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#script creates a story using passwd fields
+COUNT=0
+while IFS=: read -r f1 f2 f3 f4 f5 f6 f7;
+do
+	
+       echo -e "The user $f1 is part of the $f4 gang, lives in $f6 and rides $f7. \c" 
+       echo -e "$f4\c"
+       echo -e " place is protected by the passcode $f2, more info about the user here: $f5"
+
+done</etc/passwd
