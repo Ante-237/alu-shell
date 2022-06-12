@@ -8,3 +8,4 @@
 8 - organizing and eliminating some file characters
 9 - looping and manipulating files
 10 - using math operators with loops and if statments
+11 - using while with read 
