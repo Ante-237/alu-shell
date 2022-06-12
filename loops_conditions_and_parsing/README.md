@@ -5,4 +5,6 @@
 5 - using nested if with while loop
 6 - using case and while loop with custom output 
 7 - using more loops
-8 - looping and manipulating files
+8 - organizing and eliminating some file characters
+9 - looping and manipulating files
+10 - using math operators with loops and if statments
