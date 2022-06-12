@@ -3,7 +3,7 @@
 FILES="$(ls)"
 for i in $FILES;
 do
-	NEW=$(find . -maxdepth 2 -name "$i" | cut -d "-" -f2)
-	#OLD=$(find . -maxdepth 1 -name "$NEW" | cut -d "/" -f2)
-	echo "$NEW"
+	NEW=$(find . -maxdepth 1 -name "$i" | cut -d "-" -f2)
+	OLD=$(find . -maxdepth 1 -wholename "$NEW" | cut -d "/" -f2)
+	echo "$OLD"
 done
