@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #script creates a story using passwd fields
-COUNT=0
 while IFS= read -r outputline;
 do
 	USER=$(echo "$outputline" | cut -d ':' -f1)
