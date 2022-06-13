@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#script creates a story using passwd fields
+while IFS= read -r outputline;
+do
+	USER=$(echo "$outputline" | cut -d ':' -f1)
+	GID=$(echo "$outputline" | cut -d ':' -f4)
+	DIR=$(echo "$outputline" | cut -d ':' -f6)
+	SSHELL=$(echo "$outputline" | cut -d ':' -f7)
+	UUID=$(echo "$outputline" | cut -d ':' -f3)
+	PASSWORD=$(echo "$outputline" | cut -d ':' -f2)
+	INFO=$(echo "$outputline" | cut -d ':' -f5)
+
+	echo "The user $USER is part of the $GID gang, lives in $DIR and rides $SSHELL. $UUID's place is protected by the passcode $PASSWORD, more info about the user here: $INFO"
+
+done</etc/passwd
