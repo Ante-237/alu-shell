@@ -11,6 +11,6 @@ do
 	PASSWORD=$(echo "$outputline" | cut -d ':' -f2)
 	INFO=$(echo "$outputline" | cut -d ':' -f5)
 
-	echo "The user $USER is part of the $GID gang, lives in $DIR and rides $SSHEL. $UUID's place is protected by the passcode $PASSWORD, more info about the user here: $INFO"
+	echo "The user $USER is part of the $GID gang, lives in $DIR and rides $SSHELL. $UUID's place is protected by the passcode $PASSWORD, more info about the user here: $INFO"
 
 done</etc/passwd
