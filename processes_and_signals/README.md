@@ -6,3 +6,4 @@
 5 -> finding and killing a process with a known name
 6 -> findding and killing a process with kill or killall
 7 -> picking up signals and displaying custom messages
+8 -> kill process no matter what
