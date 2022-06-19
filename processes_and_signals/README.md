@@ -7,3 +7,4 @@
 6 -> findding and killing a process with kill or killall
 7 -> picking up signals and displaying custom messages
 8 -> kill process no matter what
+9 -> handles signals in an infinity lopp with custom messages
