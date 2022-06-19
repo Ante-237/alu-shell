@@ -3,7 +3,7 @@
 
 function startup(){
 	bash ./manage_my_process &
-	pgrep -f './manage_my_process' > /var/run/my_process.pid
+	echo "$!" > /var/run/my_process.pid
 }
 
 function stopnow(){
