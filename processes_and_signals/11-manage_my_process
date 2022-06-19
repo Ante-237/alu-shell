@@ -1,21 +1,34 @@
 #!/usr/bin/env bash
 #starts stop restart script depending on the argument passed
+
+function startup(){
+	bash ./manage_my_process &
+	pgrep -f './manage_my_process' > /var/run/my_process.pid
+}
+
+function stopnow(){
+	pkill -f './manage_my_process' && rm /var/run/my_process.pid 
+}
+
+function restartnow(){
+	stopnow
+	startup
+	echo "manage_my_process restarted"
+}
 if [ $# -eq 1 ] 
 then
-	OPTION="$1"
-	case $OPTION in
-	start)
-	./manage_my_process start
-	pgrep -f './manage_my_process' > /var/run/my_process.pid && echo "manage_my_process started"
+	OPTIONN="$1"
+	case $OPTIONN in
+	"start")
+		startup
+	echo "manage_my_process started"
 	;;
-	stop)
-	./manage_my_process stop
-	rm /var/run/my_process.pid && echo "manage_my_process stopped"
+	"stop")
+		stopnow
+	      	echo "manage_my_process stopped"
 	;;
-	restart)
-	./manage_my_process stop
-	rm /var/run/my_process.pid && ./manage_my_process start
-	pgrep -f './manage_my_process' > /var/run/my_process.pid && echo "manage_my_process restarted"
+        "restart")
+	restartnow
 	;;
 	*)
 	echo "Usage: manage_my_process {start|stop|restart}"
